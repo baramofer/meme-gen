@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mad Meme Generator!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link href="vendor/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+
+    </style>
+</head>
+
+<body onload="init()">
+    <div class="screen" onclick="navToggle()"></div>
+    <header>
+        <div class="logo"><a href="index.html">Meme Generator!</a></div>
+        <i onclick="navToggle()" class="hamburger fa fa-bars"></i>
+        <ul class="header-nav">
+            <li><a href="index.html">
+                    <div><i class="fa fa-camera-retro"></i></div>Gallery
+                </a></li>
+            <li><a href="#">
+                    <div><i class="fa fa-paint-brush"></i></div>Memes
+                </a></li>
+            <li><a href="#">
+                    <div><i class="fa fa-question-circle"></i></div>About
+                </a></li>
+        </ul>
+    </header>
+    <div class="main-container container">
+        <div class="canvas-container">
+            <canvas id="my-canvas"></canvas>
+        </div>
+        <div class="user-toolbar">
+            <div class="input-txt-toolbar"></div>
+            <div class="add-del-toolbar">
+                <button class="btn btn-add" name="y" value="-10" onclick="updateCanvas(this)"><i
+                        class="fa fa-sort-up"></i></button>
+                <button class="btn btn-add" name="y" value="10" onclick="updateCanvas(this)"><i
+                        class="fa fa-sort-down"></i></button>
+                <button class="btn btn-add" onclick="onAddLine()"><i class="fa fa-plus"></i></button>
+                <button class="btn btn-chng" onclick="onChangeOrder()"><i class="fa fa-object-ungroup"></i></button>
+                <button class="btn btn-switch" onclick="onSwitch()"><i class="fa fa-random"></i></button>
+                <button class="btn btn-del" onclick="onDeleteLine()"><i class="fa fa-trash"></i></button>
+            </div>
+            <div class="txt-btns-toolbar">
+                <div class="txt-btns-toolbar-upper">
+                    <button class="btn btn-txt" name="size" value="16" onclick="updateCanvas(this)"><i
+                            class="fa fa-plus-square"></i></button>
+                    <button class="btn btn-txt" name="size" value="-16" onclick="updateCanvas(this)"><i
+                            class="fa fa-minus-square"></i></button>
+                    <button class="btn btn-txt" name="align" value="right" onclick="updateCanvas(this)"><i
+                            class="fa fa-align-left"></i></button>
+                    <button class="btn btn-txt" name="align" value="center" onclick="updateCanvas(this)"><i
+                            class="fa fa-align-center"></i></button>
+                    <button class="btn btn-txt" name="align" value="left" onclick="updateCanvas(this)"><i
+                            class="fa fa-align-right"></i></button>
+                </div>
+                <div class="txt-btns-toolbar-down"></div>
+            </div>
+            <div class="download-btn-toolbar">
+                <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
+            </div>
+
+        </div>
+        <img class="imgSelected" src="" alt="">
+
+        <script src="js/utils.js"></script>
+        <script src="js/memeService.js"></script>
+        <script src="js/canvasService.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/canvasController.js"></script>
+</body>
+
+</html>

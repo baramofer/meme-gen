@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mad Meme Generator!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="init()">
+    <div class="screen" onclick="navToggle()"></div>
+    <header>
+        <div class="logo"><a href="index.html">Meme Generator!</a></div>
+        <i onclick="navToggle()" class="hamburger fa fa-bars"></i>
+        <ul class="header-nav">
+            <li><a href="index.html">
+                    <div><i class="fa fa-camera-retro"></i></div>Gallery
+                </a></li>
+            <li><a href="#">
+                    <div><i class="fa fa-paint-brush"></i></div>Memes
+                </a></li>
+            <li><a href="#">
+                    <div><i class="fa fa-question-circle"></i></div>About
+                </a></li>
+        </ul>
+    </header>
+    <div class="main-container container">
+        <section class="search-section">
+            <span class="search-txt">Search cool pictures you like! </span>
+            <input type="text" list="keywordList" placeholder="Search"
+                onkeyup="renderImgsSection(this.value)">
+        </section>
+        <div class="pop-words"></div>
+        <section class="imgs-section">
+        </section>
+    </div>
+    <datalist id="keywordList" class="KeywordList">
+    </datalist>
+
+    <script src="js/utils.js"></script>
+    <script src="js/memeService.js"></script>
+    <script src="js/canvasService.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
